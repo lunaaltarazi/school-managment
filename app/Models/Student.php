@@ -2,18 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    Public function User(){
+    use HasFactory;
+    public function user()
+    {
 
-    return $this->belongsTo(User::class);
-
+        return $this->belongsTo(User::class);
     }
 
-    public function Courses(){
+    public function courses()
+    {
 
-    return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Course::class);
     }
 }

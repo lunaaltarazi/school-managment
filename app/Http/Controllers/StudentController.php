@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    Public function index(){
-    return Student::query()->get();
-}
-    public function indexx(){
+    public function index()
+    {
+        return Student::query()->get();
+    }
+    public function indexx()
+    {
 
-    return Student::query()->with('course')->get();
+        return Student::query()->with('course')->get();
     }
 }

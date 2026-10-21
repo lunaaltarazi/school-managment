@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
-
+#[Fillable('name','teacher_id')]
 class Course extends Model
 {
-    Public function teacher(){
+    public function teacher(){
 
-    $this->belongsTo(Teacher::class);
+    return $this->belongsTo(Teacher::class);
 
     }
-    Public function courses(){
+    public function students(){
 
-    $this->belongsToMany(Course::class);
+   return $this->belongsToMany(Student::class);
     }
 }
